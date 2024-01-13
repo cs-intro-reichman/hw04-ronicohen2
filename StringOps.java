@@ -38,7 +38,7 @@ public class StringOps
          {
             result +=(char)(c - 32);
          }
-         if ((c=='A')|| (c=='E')|| (c=='I')||(c=='O')|| (c=='U'))
+         else if ((c=='A')|| (c=='E')|| (c=='I')||(c=='O')|| (c=='U'))
          {
             result += c;
          }
@@ -55,7 +55,8 @@ public class StringOps
         return result;
     }
 
-    public static String camelCase (String string) {
+    public static String camelCase (String string) 
+    {
         // Write your code here:
         return "";
     }

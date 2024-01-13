@@ -3,8 +3,11 @@ public class ArrayOps
     public static void main(String[] args) 
     {
         int[] x= {1,2,3,4,5};
+        int[] y= {1,2,1,1,2};
+        int[] z= {2,1};
         System.out.println(findMissingInt(x));
         System.out.println(secondMaxValue(x));
+        System.out.println(containsTheSameElements(z, y));
     }
     
     public static int findMissingInt (int [] array) 
@@ -45,7 +48,6 @@ public class ArrayOps
     {
         int max= 0;
         int secondmax = 0;
-        int indxmax = 0;
         for(int j=1; j<array.length; j++)
         {
             if (array[j] >= max)
@@ -63,14 +65,32 @@ public class ArrayOps
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) 
     {
-        // Write your code here:
-        return false;
+        boolean same = true;
+        for(int i=1; i<array1.length; i++)
+        {
+            for (int j=1; j<array2.length; j++)
+            {
+                if (array1[i]!=array2[j])
+                {
+                    same = false;
+                }
+            }
+        }
+        return same;
     }
 
     public static boolean isSorted(int [] array) 
     {
-        // Write your code here:
-        return false;
+        boolean isSorted = true;
+        for (int i = 0 ; i < array.length - 1; i++)
+        {
+            if (array[i+1] < array[i]) 
+            {
+                isSorted = false;
+                break;
+            }
+        }
+        return isSorted;
     }
 
 }

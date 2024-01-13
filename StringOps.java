@@ -38,6 +38,10 @@ public class StringOps
          {
             result +=(char)(c - 32);
          }
+         if ((c=='A')|| (c=='E')|| (c=='I')||(c=='O')|| (c=='U'))
+         {
+            result += c;
+         }
          else if ((c >= 'A') && (c <= 'Z'))
          {
             result += (char)(c + 32);

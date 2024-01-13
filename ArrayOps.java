@@ -90,31 +90,21 @@ public class ArrayOps
 
     public static boolean isSorted(int [] array) 
     {
-        boolean sorted = true;
+        boolean ascending = true;
+        boolean descending = true;
         for (int i = 0 ; i < array.length - 1; i++)
         {
             if (array[i+1] < array[i]) 
             {
-                sorted = false;
-                break;
+                ascending = false;
             }
-        }
-        if (sorted == true)
-        {
-            return sorted;
-        }
-        else
-        {
-            for (int j = array.length ; j > 1; j++)
-        {
-            if (array[j] > array[j-1]) 
+            if (array[i+1] > array[i]) 
             {
-                sorted = false;
-                break;
+                descending = false;
             }
-        }
-        }      
-        return sorted;
+
+        }   
+        return (ascending||descending);
     }
 
 }

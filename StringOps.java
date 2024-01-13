@@ -42,10 +42,6 @@ public class StringOps
          {
             result += (char)(c + 32);
          }
-         else if (c == ' ')
-         {
-            result += c;
-         }
          else
          {
             result += c;

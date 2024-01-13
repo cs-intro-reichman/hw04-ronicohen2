@@ -3,11 +3,12 @@ public class ArrayOps
     public static void main(String[] args) 
     {
         int[] x= {1,2,3,4,5};
-        int[] y= {1,2,1,1,2};
-        int[] z= {2,1};
+        int[] y= {3, -4, 1, 2, 5};
+        int[] z= {1, 3, -4, 5};
         System.out.println(findMissingInt(x));
         System.out.println(secondMaxValue(x));
-        System.out.println(containsTheSameElements(z, y));
+        System.out.println(containsTheSameElements(y,z));
+        System.out.println(isSorted(x));
     }
     
     public static int findMissingInt (int [] array) 
@@ -69,7 +70,7 @@ public class ArrayOps
         
         for(int i=0; i<array1.length; i++)
         {
-            boolean same = true;
+            boolean same = false;
             for (int j=0; j<array2.length; j++)
             {
                 if (!visited[j]&&(array1[i]==array2[j]))
@@ -89,24 +90,31 @@ public class ArrayOps
 
     public static boolean isSorted(int [] array) 
     {
-        boolean isSorted = true;
+        boolean sorted = true;
         for (int i = 0 ; i < array.length - 1; i++)
         {
             if (array[i+1] < array[i]) 
             {
-                isSorted = false;
+                sorted = false;
                 break;
             }
         }
-        for (int j = array.length ; j > 1; j++)
+        if (sorted == true)
+        {
+            return sorted;
+        }
+        else
+        {
+            for (int j = array.length ; j > 1; j++)
         {
             if (array[j] > array[j-1]) 
             {
-                isSorted = false;
+                sorted = false;
                 break;
             }
         }
-        return isSorted;
+        }      
+        return sorted;
     }
 
 }

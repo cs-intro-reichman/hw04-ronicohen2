@@ -2,9 +2,9 @@ public class ArrayOps
 {
     public static void main(String[] args) 
     {
-        int[] x= {2,8,3,7,8};
+        int[] x= {1,2,3,4,5};
         System.out.println(findMissingInt(x));
-         System.out.println(secondMaxValue(x));
+        System.out.println(secondMaxValue(x));
     }
     
     public static int findMissingInt (int [] array) 
@@ -43,11 +43,12 @@ public class ArrayOps
 
     public static int secondMaxValue(int [] array) 
     {
-        int max= array[0];
+        int max= 0;
         int secondmax = 0;
+        int indxmax = 0;
         for(int j=1; j<array.length; j++)
         {
-            if (array[j] > max)
+            if (array[j] >= max)
             {
                 secondmax = max;
                 max = array[j];

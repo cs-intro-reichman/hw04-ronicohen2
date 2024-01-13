@@ -3,8 +3,8 @@ public class ArrayOps
     public static void main(String[] args) 
     {
         int[] x= {1,2,3,4,5};
-        int[] y= {3, -4, 1, 2, 5};
-        int[] z= {1, 3, -4, 5};
+        int[] y= {3,-4,1,2,5};
+        int[] z= {1,3,-4,5};
         System.out.println(findMissingInt(x));
         System.out.println(secondMaxValue(x));
         System.out.println(containsTheSameElements(y,z));
@@ -70,7 +70,7 @@ public class ArrayOps
         
         for(int i=0; i<array1.length; i++)
         {
-            boolean same = false;
+            boolean same = true;
             for (int j=0; j<array2.length; j++)
             {
                 if (!visited[j]&&(array1[i]==array2[j]))

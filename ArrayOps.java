@@ -66,16 +66,19 @@ public class ArrayOps
     public static boolean containsTheSameElements(int [] array1,int [] array2) 
     {
         boolean same = true;
-        for(int i=1; i<array1.length; i++)
+        for(int i=0; i<array1.length; i++)
         {
-            for (int j=1; j<array2.length; j++)
+            for (int j=0; j<array2.length; j++)
             {
-                if (array1[i]!=array2[j])
+                if (array1[i]==array2[j])
                 {
-                    same = false;
+                    same = true;
+                    break;
                 }
-            }
-        }
+                else same = false;
+              }
+           }
+        
         return same;
     }
 
@@ -85,6 +88,14 @@ public class ArrayOps
         for (int i = 0 ; i < array.length - 1; i++)
         {
             if (array[i+1] < array[i]) 
+            {
+                isSorted = false;
+                break;
+            }
+        }
+        for (int j = array.length ; j > 1; j++)
+        {
+            if (array[j] > array[j-1]) 
             {
                 isSorted = false;
                 break;

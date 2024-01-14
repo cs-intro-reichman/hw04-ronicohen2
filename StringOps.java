@@ -110,6 +110,6 @@ public class StringOps
                 index++;
             }
         }
-        return new int[1];
+        return result;
     }
 }

@@ -66,9 +66,11 @@ public class StringOps
                 char c = string.charAt(j);
                 if ((c >= 'A') && (c <= 'Z'))
                 {
-                result += (char)(c + 32);
+                    result += (char)(c + 32);
                 }
+                else result += c;
             }
+            return result;
         }
         else 
 
@@ -90,7 +92,24 @@ public class StringOps
 
     public static int[] allIndexOf (String string, char chr) 
     {
-        // Write your code here:
+        int count=0;
+        for (int j=0; j<string.length(); j++)
+        {
+            if(string.charAt(j)== chr)
+            {
+                count++;
+            }
+        }
+        int[] result = new int [count];
+        int index=0;
+        for (int i=0; i<string.length(); i++)
+        {
+            if (string.charAt(i)== chr)
+            {
+                result[index]= i;
+                index++;
+            }
+        }
         return new int[1];
     }
 }

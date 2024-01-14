@@ -79,6 +79,10 @@ public class ArrayOps
                     exists[j] = true;
                     break;
                 }
+                else 
+                {
+                    exists[j] = false;
+                }               
             }
             if (!same)
             {
@@ -96,6 +100,10 @@ public class ArrayOps
                     exists1[j] = true;
                     break;
                 }
+                else 
+                {
+                    exists1[j] = false;
+                }  
             }
             if (!same)
             {

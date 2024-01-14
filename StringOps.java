@@ -57,11 +57,39 @@ public class StringOps
 
     public static String camelCase (String string) 
     {
-        // Write your code here:
-        return "";
+        String result = "";
+        int space = string.indexOf(' ');
+        if (space>string.length())
+        {
+            for(int j=0; j<string.length();j++)
+            {
+                char c = string.charAt(j);
+                if ((c >= 'A') && (c <= 'Z'))
+                {
+                result += (char)(c + 32);
+                }
+            }
+        }
+        else 
+
+
+      for (int i=0; i< space; i++)
+        {
+            char c = string.charAt(i);
+            if (c == (char)32)
+            {
+                
+            }
+            else if ((c >= 'A') && (c <= 'Z'))
+            {
+                result += (char)(c + 32);
+            }
+        }
+        return result;
     }
 
-    public static int[] allIndexOf (String string, char chr) {
+    public static int[] allIndexOf (String string, char chr) 
+    {
         // Write your code here:
         return new int[1];
     }

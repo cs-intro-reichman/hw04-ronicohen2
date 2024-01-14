@@ -66,51 +66,39 @@ public class ArrayOps
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) 
     {
-        boolean[] exists = new boolean[array2.length];
-        boolean[] exists1 = new boolean[array1.length];
+        boolean same1 = false;;
+        boolean same2 = false;
         for(int i=0; i<array1.length; i++)
         {
-            boolean same = true;
+            same1 = false;
             for (int j=0; j<array2.length; j++)
             {
-                if (!exists[j]&&(array1[i]==array2[j]))
+                if ((array1[i]==array2[j]))
                 {
-                    same = true;
-                    exists[j] = true;
-                    break;
-                }
-                else 
-                {
-                    exists[j] = false;
-                }               
+                    same1 = true;
+                }             
             }
-            if (!same)
+            if (same1==false)
             {
-               return false;
+                break;
             }
         }
         for(int i=0; i<array2.length; i++)
         {
-            boolean same = true;
+            same2 = false;
             for (int j=0; j<array1.length; j++)
             {
-                if (!exists1[j]&&(array2[i]==array1[j]))
+                if ((array2[i]==array1[j]))
                 {
-                    same = true;
-                    exists1[j] = true;
-                    break;
+                    same2 = true;
                 }
-                else 
-                {
-                    exists1[j] = false;
-                }  
             }
-            if (!same)
+            if (same2==false)
             {
-               return false;
+                break;
             }
         }            
-        return true;
+        return (same1 && same2);
     }
 
     public static boolean isSorted(int [] array) 

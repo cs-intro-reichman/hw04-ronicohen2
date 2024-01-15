@@ -58,6 +58,22 @@ public class StringOps
     public static String camelCase (String string) 
     {
         String result = "";
+        String nospaceatbegin ="";
+        boolean leadingSpaceFound = false;
+        for(int j=0; j<string.length(); j++)
+        {
+            char c = string.charAt(j);
+            if ((c == ' ')&&!leadingSpaceFound)
+            {
+            } 
+            else 
+            {
+                nospaceatbegin +=c;
+                leadingSpaceFound = true;
+                
+            }
+        }
+        string = nospaceatbegin;
         char c1 = string.charAt(0);
         for(int i=0; i<string.length(); i++)
         {
@@ -68,18 +84,19 @@ public class StringOps
                 {
                     result += (char)(c2 - 32);
                 }
-                else result += c2;
-
+                else if ((c2 >= 'a') && (c2 <= 'z'))
+                {
+                result += c2;
+                }
             }
             else if (c2 == ' ')
             {
-                result += "";
             }
             else if ((c2 >= 'A') && (c2 <= 'Z'))
             {
                 result += (char)(c2 + 32);
             }
-            else
+            else if ((c2 >= 'a') && (c2 <= 'z'))
             {
                 result += c2;
 

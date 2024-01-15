@@ -25,7 +25,7 @@ public class StringOps
     public static void main(String[] args) 
     {
         String str = args[0];
-        System.out.println(capVowelsLowRest(str));
+        System.out.println(camelCase(str));
     }
 
     public static String capVowelsLowRest (String string) 
@@ -58,34 +58,33 @@ public class StringOps
     public static String camelCase (String string) 
     {
         String result = "";
-        int space = string.indexOf(' ');
-        if (space>string.length())
+        char c1 = string.charAt(0);
+        for(int i=0; i<string.length(); i++)
         {
-            for(int j=0; j<string.length();j++)
+            char c2 = string.charAt(i);
+            if (c1 == ' ')
             {
-                char c = string.charAt(j);
-                if ((c >= 'A') && (c <= 'Z'))
+                if ((c2 >= 'a') && (c2 <= 'z'))
                 {
-                    result += (char)(c + 32);
+                    result += (char)(c2 - 32);
                 }
-                else result += c;
-            }
-            return result;
-        }
-        else 
+                else result += c2;
 
+            }
+            else if (c2 == ' ')
+            {
+                result += "";
+            }
+            else if ((c2 >= 'A') && (c2 <= 'Z'))
+            {
+                result += (char)(c2 + 32);
+            }
+            else
+            {
+                result += c2;
 
-      for (int i=0; i< space; i++)
-        {
-            char c = string.charAt(i);
-            if (c == (char)32)
-            {
-                
             }
-            else if ((c >= 'A') && (c <= 'Z'))
-            {
-                result += (char)(c + 32);
-            }
+            c1 = string.charAt(i);
         }
         return result;
     }

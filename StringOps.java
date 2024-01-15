@@ -84,7 +84,7 @@ public class StringOps
                 {
                     result += (char)(c2 - 32);
                 }
-                else if ((c2 >= 'a') && (c2 <= 'z'))
+                else if ((c2 >= 'A') && (c2 <= 'Z'))
                 {
                 result += c2;
                 }
